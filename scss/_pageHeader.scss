@@ -1,0 +1,88 @@
+/*#region ----------------- Page Header */
+.page-header {
+  margin-top: 91px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  &.education {
+    background-image: url(../images/page-header-education.jpg);
+  }
+  .header-inner {
+    background: linear-gradient(90deg, rgba(0, 125, 223, 0.6), #1297ff);
+    position: relative;
+    padding: 6rem 0;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(../images/web-header.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      opacity: 0.2;
+    }
+  }
+  .text-content {
+    text-align: right;
+    position: relative;
+    z-index: 20;
+    h1 {
+      color: white;
+      margin-bottom: 0;
+      font-size: 24px;
+    }
+  }
+  .mybreadcrumb {
+    ol {
+      justify-content: center;
+      margin-bottom: 0;
+    }
+    .breadcrumb-item {
+      &.active {
+        color: $primary;
+      }
+      a {
+        color: white;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .page-header {
+    margin-top: 76px;
+    .header-inner {
+      padding: 5rem 0;
+    }
+    .text-content {
+      h1 {
+        font-size: 22px;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .page-header {
+    .header-inner {
+      padding: 4rem 0;
+    }
+    .text-content {
+      h1 {
+        font-size: 20px;
+      }
+    }
+  }
+}
+@media (max-width: 575px) {
+  .page-header {
+    .text-content {
+      h1 {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+/*#region ----------------- Page Header */

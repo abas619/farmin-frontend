@@ -1,0 +1,67 @@
+/*#region ----------------- Buttons */
+.btn {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0.7rem 1.2rem;
+  border-radius: 50px;
+  border: 1px solid transparent;
+  box-shadow: none !important;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+  &:hover,
+  &:focus {
+    box-shadow: none !important;
+  }
+  .fi {
+    position: relative;
+    top: 5px;
+    font-size: 24px;
+    line-height: 0;
+  }
+}
+.icon-right {
+  .fi {
+    margin-left: 10px;
+  }
+}
+.icon-left {
+  .fi {
+    margin-right: 10px;
+  }
+}
+
+.btn-primary {
+  background: $primary;
+  color: white;
+  &:hover,
+  &:focus {
+    color: white;
+    border-color: $primary;
+    background: $primary;
+  }
+}
+.btn-secondary {
+  background: $accent;
+  color: $primary;
+  border: none;
+  min-width: 180px;
+  &:hover,
+  &:focus {
+    background: $secondary;
+    color: $primary;
+    border: none;
+  }
+}
+.btn-primary-outline {
+  background-color: white;
+  border-color: $primary;
+  color: $primary;
+  &:hover,
+  &:focus {
+    color: $primary;
+    border-color: $primary;
+  }
+}
+/*#endregion -------------- Buttons */

@@ -1,0 +1,157 @@
+/*#region ----------------- Property */
+.property-section {
+  padding: 100px 0;
+  position: relative;
+  height: 600px;
+  margin-top: 4rem;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/bg/back_04.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top center;
+    z-index: -1;
+  }
+  .section-inner {
+    @include displayFlex(flex, flex-end, center);
+    flex-wrap: wrap;
+    width: 600px;
+    margin: 0 auto;
+    padding-top: 80px;
+  }
+  .card-property {
+    flex: 0 0 33.33%;
+    width: 33.33%;
+  }
+}
+
+.card-property {
+  .thumb {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+    @include displayFlex(flex, center, center);
+    transition: all 0.3s ease-in-out;
+    border-radius: 50%;
+    img,
+    svg {
+      width: 60%;
+      fill: white;
+    }
+  }
+  .info {
+    margin-top: 20px;
+    h5 {
+      text-align: center;
+      font-size: 17px;
+      font-weight: 600;
+      color: $textDark;
+    }
+  }
+  &.color-1 {
+    .thumb {
+      background-color: $secondary;
+      svg {
+        fill: $primary;
+      }
+    }
+  }
+  &.color-2 {
+    .thumb {
+      background-color: $accent;
+      svg {
+        fill: $primary;
+      }
+    }
+  }
+  &.color-3 {
+    .thumb {
+      background-color: $primary;
+      svg {
+        fill: white;
+      }
+    }
+  }
+  &:hover {
+    .thumb {
+      transform: scale(1.1);
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .property-section {
+    height: 550px;
+  }
+}
+@media (max-width: 1199px) {
+  .property-section {
+    padding-top: 70px;
+    height: 450px;
+  }
+  .card-property {
+    .thumb {
+      width: 120px;
+      height: 120px;
+    }
+  }
+}
+@media (max-width: 992px) {
+  .property-section {
+    padding-top: 30px;
+    height: 350px;
+    &::before {
+      background-position: bottom center;
+    }
+    .section-inner {
+      width: 500px;
+    }
+  }
+  .card-property {
+    .thumb {
+      width: 100px;
+      height: 100px;
+    }
+    .info {
+      margin-top: 15px;
+      h5 {
+        font-size: 14px;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .property-section {
+    height: 280px;
+    .section-inner {
+      padding-top: 0;
+    }
+  }
+}
+@media (max-width: 575px) {
+  .property-section {
+    padding: 30px 0;
+    height: 220px;
+    .section-inner {
+      width: 100%;
+    }
+  }
+  .card-property {
+    .thumb {
+      width: 80px;
+      height: 80px;
+    }
+    .info {
+      margin-top: 10px;
+      h5 {
+        font-size: 13px;
+      }
+    }
+  }
+}
+/*#endregion -------------- Property */

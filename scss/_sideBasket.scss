@@ -1,0 +1,200 @@
+/*#region ----------------- Sidebar Cart */
+.side-basket-wrapper {
+  z-index: 2100;
+  height: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+#side-basket {
+  width: 320px;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  max-height: 100%;
+  height: 100%;
+  z-index: 2002;
+  background: white;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  background-clip: padding-box;
+  pointer-events: auto;
+  &.active {
+    left: 0;
+  }
+  .basket-header {
+    text-align: center;
+    padding: 25px 0 22px 0px;
+    font-weight: 400;
+    box-shadow: 0 10px 20px -5px rgba($color: #000000, $alpha: 0.05);
+    position: relative;
+    z-index: 50;
+    flex-shrink: 0;
+    .order-numbers {
+      font-size: 14px;
+      font-weight: 600;
+      color: $textDark;
+      margin-bottom: 0;
+    }
+  }
+  .basket-list-item {
+    padding: 10px;
+    overflow-y: auto;
+    background-color: white;
+    flex: 1 1 auto;
+    .item {
+      border-bottom: 1px solid $borderColor;
+      padding: 10px 0;
+      &:last-child {
+        border-bottom: none;
+      }
+      .item-inner {
+        display: grid;
+        grid-template-columns: 60px auto;
+        align-items: center;
+      }
+      .product-image {
+        a {
+          display: block;
+        }
+        img {
+          width: 100%;
+        }
+      }
+      .product-info {
+        padding-right: 10px;
+        a {
+          display: block;
+        }
+        .name {
+          font-size: 13px;
+          font-weight: 400;
+          color: $textDark;
+          @include textTruncate(1);
+          line-height: normal;
+          margin-bottom: 0.6rem;
+          &:hover {
+            color: $primary;
+          }
+        }
+        .data {
+          @include displayFlex(flex, center, space-between);
+        }
+        .price {
+          .number {
+            font-size: 14px;
+            font-weight: 600;
+            color: $textDark;
+            .toman {
+              font-size: 12px;
+              font-weight: 400;
+              margin-right: 5px;
+              color: $textGrey;
+            }
+          }
+        }
+        .btn-delete {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          border: 1px solid $error;
+          padding: 3px;
+          font-size: 13px;
+          color: $error;
+          background-color: white;
+          &:hover {
+            background-color: $error;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  .basket-pays {
+    padding: 10px;
+    z-index: 50px;
+    background-color: white;
+    flex-shrink: 0;
+    box-shadow: 0 -10px 20px -8px rgba($color: #000000, $alpha: 0.05);
+    .goto-cart {
+      width: 100%;
+      display: block;
+      position: relative;
+      color: white;
+      background-color: $primary;
+      border-radius: 10px;
+      padding: 12px;
+      .count-price {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        padding: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 8px;
+        background-color: rgba($color: white, $alpha: 0.1);
+      }
+      .btn-text {
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+  }
+  #dismiss-basket,
+  .delete-basket {
+    position: absolute;
+    top: 13px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    color: $textGrey;
+    padding: 0;
+    border-radius: 50%;
+    background-color: $background_grey;
+    border: none;
+    z-index: 60;
+    i {
+      font-size: 18px;
+      position: relative;
+      top: 3px;
+    }
+  }
+  .delete-basket {
+    left: 10px;
+    &:hover {
+      background-color: $error;
+      color: white;
+    }
+  }
+  #dismiss-basket {
+    right: 10px;
+    &:hover {
+      background-color: $secondary;
+      color: white;
+    }
+  }
+}
+.basket-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2001;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  &.active {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 350px) {
+  #side-basket {
+    width: 100%;
+  }
+}
+/*#endregion -------------- Sidebar Cart */

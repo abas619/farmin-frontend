@@ -1,0 +1,59 @@
+/*#region ----------------- Breadcrumb */
+.mybreadcrumb {
+  margin-bottom: 1rem;
+  .breadcrumb-item {
+    padding: 0 20px 0 0;
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    &::before {
+      content: "\f12d";
+      font-family: $iconFontRegular;
+      position: absolute;
+      right: -7px;
+      top: -2px;
+      font-size: 18px;
+      color: white;
+      padding-right: 0.5rem;
+      padding-left: 0;
+    }
+    &:first-child {
+      &::before {
+        display: none;
+      }
+    }
+    a {
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+  &.type-2 {
+    padding-right: 20px;
+    .breadcrumb {
+      margin-bottom: 0;
+    }
+    .breadcrumb-item {
+      &::before {
+        color: $textGrey;
+      }
+      a {
+        color: $primary;
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .mybreadcrumb {
+    .breadcrumb-item {
+      font-size: 12px;
+      &::before {
+        font-size: 15px;
+      }
+      a {
+        font-size: 12px;
+      }
+    }
+  }
+}
+/*#endregion -------------- Breadcrumb */

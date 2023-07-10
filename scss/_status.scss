@@ -1,0 +1,152 @@
+/*#region ----------------- Status */
+.status-section {
+  background-color: $background_grey;
+  padding: 70px 0;
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -140px;
+    width: 600px;
+    height: 513px;
+    background-image: url(../images/bg/back_05.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    z-index: -1;
+  }
+  .card-grid-layout {
+    @include displayFlex(flex, center, flex-start);
+    flex-wrap: wrap;
+    .card-status {
+      flex: 0 0 50%;
+      width: 50%;
+    }
+  }
+}
+.card-status {
+  padding: 10px;
+  .card-inner {
+    background-color: rgba($color: white, $alpha: 0.9);
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba($color: #000000, $alpha: 0.1);
+    display: grid;
+    grid-template-columns: 60px auto;
+    align-items: center;
+    padding: 15px;
+    transition: all 0.4s ease-in-out;
+  }
+  .icon {
+    @include displayFlex(flex, center, center);
+    img,
+    svg {
+      width: 100%;
+      fill: $primary;
+    }
+  }
+  .info {
+    padding-right: 10px;
+    h5 {
+      font-size: 20px;
+      font-weight: 800;
+      color: $primary;
+      margin-bottom: 0;
+    }
+    h6 {
+      font-size: 16px;
+      color: $textGrey;
+      margin-bottom: 0;
+    }
+  }
+  &.active {
+    .card-inner {
+      background-color: rgba($color: $primary, $alpha: 0.95);
+      transform: scale(1.2);
+    }
+    .icon {
+      svg {
+        fill: white;
+      }
+    }
+    .info {
+      h5 {
+        color: white;
+      }
+      h6 {
+        color: rgba($color: white, $alpha: 0.9);
+      }
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .card-status {
+    .card-inner {
+      grid-template-columns: 50px auto;
+    }
+  }
+}
+@media (max-width: 992px) {
+  .status-section {
+    &::before {
+      top: -100px;
+      width: 400px;
+      height: 342px;
+    }
+    .text-content {
+      margin-bottom: 2rem;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .status-section {
+    &::before {
+      top: -80px;
+      width: 300px;
+      height: 257px;
+    }
+  }
+  .card-status {
+    .card-inner {
+      grid-template-columns: 40px auto;
+      padding: 10px;
+    }
+    .info {
+      h5 {
+        font-size: 18px;
+      }
+      h6 {
+        font-size: 13px;
+      }
+    }
+  }
+}
+@media (max-width: 575px) {
+  .status-section {
+    &::before {
+      top: -50px;
+      width: 200px;
+      height: 171px;
+    }
+    .status-content-cards {
+      padding: 0 20px;
+    }
+  }
+  .card-status {
+    padding: 5px;
+    .card-inner {
+      grid-template-columns: 35px auto;
+      padding: 5px;
+    }
+    .info {
+      h5 {
+        font-size: 16px;
+      }
+      h6 {
+        font-size: 12px;
+      }
+    }
+  }
+}
+/*#endregion -------------- Status */

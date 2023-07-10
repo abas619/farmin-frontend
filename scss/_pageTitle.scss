@@ -1,0 +1,90 @@
+/*#region ----------------- Page Title */
+.page-title {
+  text-align: center;
+  .title-inner {
+    @include displayFlex(flex, center, space-between);
+  }
+  h1 {
+    font-size: 1.7rem;
+    color: $primary;
+    line-height: 42px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 5px;
+    text-align: right;
+  }
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    color: $textGrey;
+    margin-bottom: 0;
+    text-align: right;
+  }
+  .see-more-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: $primary;
+    @include displayFlex(flex, center, center);
+    transition: all 0.2s ease-in-out;
+    .fi {
+      margin-right: 8px;
+      font-size: 18px;
+    }
+    img {
+      width: 100%;
+    }
+    &:hover {
+      transform: translateX(-10px);
+    }
+    .icon {
+      @include displayFlex(flex, center, center);
+    }
+  }
+  &.text-center {
+    text-align: center;
+    .title-inner {
+      margin: 0 auto;
+      width: 60%;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .page-title {
+    h1 {
+      font-size: 1.3rem;
+      line-height: 36px;
+    }
+    .see-more-link {
+      width: 60px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .page-title {
+    h1 {
+      font-size: 1.1rem;
+      line-height: 32px;
+    }
+    p {
+      font-size: 13px;
+    }
+    &.type-row {
+      h1 {
+        padding-right: 30px;
+      }
+    }
+    .see-more-link {
+      width: 50px;
+    }
+  }
+}
+@media (max-width: 575px) {
+  .page-title {
+    .see-more-link {
+      width: 40px;
+    }
+  }
+}
+/*#endregion ----------------- Page Title */

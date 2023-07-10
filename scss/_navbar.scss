@@ -1,0 +1,319 @@
+/*#region ----------------- Navbar */
+.myNavbar {
+  background-color: white;
+  width: 100%;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  box-shadow: $boxshadow;
+  &.transparent {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .header-inner {
+    display: grid;
+    grid-template-columns: 140px 1fr auto;
+    align-items: flex-end;
+  }
+  .nav-logo {
+    padding: 10px 0;
+    a {
+      position: relative;
+      display: block;
+      width: 150px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .nav-menus {
+    padding: 0 40px;
+    .menu-list {
+      display: flex;
+      align-items: center;
+      .link {
+        margin-left: 35px;
+        position: relative;
+        > a {
+          font-size: 15px;
+          font-weight: 500;
+          padding: 20px 0;
+          color: $textDark;
+          display: block;
+          text-transform: capitalize;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 0;
+            height: 3px;
+            background-color: $primary;
+            transition: all 0.2s ease-in-out;
+          }
+        }
+        &:hover {
+          > a {
+            color: $primary;
+            &::before {
+              width: 100%;
+            }
+          }
+          &.have-child {
+            &::before {
+              color: $primary;
+            }
+          }
+        }
+        &.have-child {
+          padding-left: 35px;
+          margin-left: 5px;
+          &::before {
+            content: "\f078";
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: $iconFontRegular;
+            font-weight: 900;
+            font-size: 13px;
+            color: $textSilver;
+          }
+          &:hover {
+            > ul {
+              display: block;
+              animation: swipeupsmall 0.3s ease-in-out;
+            }
+          }
+        }
+        ul {
+          display: none;
+          position: absolute;
+          top: 100%;
+          right: 0;
+          background-color: white;
+          box-shadow: $boxshadow;
+          border-radius: 8px;
+          width: 220px;
+          padding: 10px 0;
+        }
+        li {
+          position: relative;
+          a {
+            font-size: 15px;
+            font-weight: 500;
+            color: $textGrey;
+            display: block;
+            padding: 10px;
+            &:hover {
+              background-color: rgba($color: $primary, $alpha: 0.1);
+              color: $primary;
+            }
+          }
+          &.have-child {
+            &::before {
+              content: "\f25e";
+              position: absolute;
+              left: 10px;
+              top: 8px;
+              font-family: $iconFontRegular;
+              font-size: 18px;
+              color: $textGrey;
+            }
+            &:hover > a {
+              background-color: $borderColor;
+              color: $primary;
+              ~ ul {
+                display: block;
+              }
+            }
+          }
+          > ul {
+            display: none;
+            position: absolute;
+            right: 100%;
+            top: 0;
+            background-color: white;
+            width: 200px;
+            border-radius: 5px;
+            box-shadow: $boxshadow;
+          }
+        }
+      }
+    }
+  }
+  .nav-action {
+    @include displayFlex(flex, center, flex-end);
+    padding-bottom: 20px;
+  }
+  .login-btns {
+    position: relative;
+    display: flex;
+    .btn-action {
+      background-color: $primary;
+      color: white;
+      padding: 0.5rem 1rem;
+      height: 42px;
+      &:first-child {
+        border-radius: 0 50px 50px 0;
+        border-left: 3px solid $accent;
+        padding-left: 1.3rem;
+      }
+      &:last-child {
+        border-radius: 50px 0 0 50px;
+        padding-right: 1.3rem;
+      }
+      &:hover {
+        background-color: lighten($color: $primary, $amount: 10);
+      }
+    }
+    .icon {
+      position: absolute;
+      right: 57px;
+      top: 7px;
+      color: $accent;
+      z-index: 2;
+      font-size: 22px;
+    }
+  }
+  .btn-nav {
+    width: 42px;
+    height: 42px;
+    padding: 2px;
+    border-radius: 50%;
+    border: none;
+    background-color: $background_grey;
+    color: $primary;
+    font-size: 20px;
+    margin-right: 10px;
+    @include displayFlex(flex, center, center);
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background-color: $accent;
+    }
+  }
+  .mobile-links {
+    display: none;
+    .btn-mobile-menu {
+      background-color: transparent;
+      color: $textDark;
+      border: none;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      i {
+        font-size: 26px;
+        position: relative;
+        top: 5px;
+      }
+    }
+  }
+  .nav-top-banner {
+    height: 75px;
+    background-color: rgba($color: red, $alpha: 0.1);
+    a {
+      display: block;
+    }
+    img {
+      width: 100%;
+      height: 75px;
+      object-fit: cover;
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .myNavbar {
+    .nav-menus {
+      .menu-list {
+        .link {
+          margin-left: 20px;
+          a {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 992px) {
+  .myNavbar {
+    &.transparent {
+      background-color: white;
+      box-shadow: $boxshadow;
+    }
+    .header-inner {
+      grid-template-columns: 290px auto 290px;
+      align-items: center;
+      padding: 8px 0;
+    }
+    .nav-menus {
+      display: none;
+    }
+    .mobile-links {
+      display: block;
+      z-index: 20;
+    }
+    .nav-logo {
+      position: relative;
+      z-index: 10;
+      padding: 0;
+      a {
+        width: 120px;
+        margin: 0 auto;
+        &::before {
+          border: none;
+        }
+      }
+    }
+    .nav-action {
+      padding: 0;
+      .btn-action {
+        font-size: 14px;
+      }
+    }
+    .login-btns {
+      .icon {
+        right: 54px;
+        top: 8px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .myNavbar {
+    .header-inner {
+      padding: 5px 0;
+      grid-template-columns: 110px auto 110px;
+    }
+    .nav-logo {
+      text-align: right;
+    }
+    .login-btns {
+      display: none;
+    }
+    .btn-nav {
+      width: 38px;
+      height: 38px;
+      font-size: 18px;
+    }
+    .nav-top-banner {
+      height: 60px;
+      img {
+        height: 60px;
+      }
+    }
+  }
+}
+@media (max-width: 575px) {
+  .myNavbar {
+    .header-inner {
+      position: relative;
+    }
+  }
+}
+/*#endregion -------------- Navbar */

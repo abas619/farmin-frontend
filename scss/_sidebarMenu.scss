@@ -1,0 +1,174 @@
+/*#region ----------------- Sidebar Mobile Menu */
+#sidebar-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  height: 100vh;
+  width: 300px;
+  z-index: 2002;
+  background: white;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  transition: all 0.3s ease-in-out;
+  &.active {
+    right: 0;
+  }
+  .sidebar-header {
+    @include displayFlex(flex, center, space-between);
+    padding: 15px 20px;
+    position: relative;
+    .sidebar-close {
+      .btn-close-menu {
+        width: 45px;
+        height: 45px;
+        color: rgba($color: white, $alpha: 0.5);
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        .fi {
+          font-size: 22px;
+          position: relative;
+          top: 4px;
+        }
+        &:hover {
+          color: white;
+        }
+      }
+    }
+    .sidebar-logo {
+      a {
+        display: block;
+        img {
+          width: 90px;
+        }
+        span {
+          font-size: 16px;
+          font-weight: 500;
+          color: $textDark;
+        }
+      }
+    }
+  }
+  .sidebar-login {
+    @include displayFlex(none, center, center);
+    margin-top: 15px;
+  }
+  .login-btns {
+    position: relative;
+    display: flex;
+    .btn-action {
+      background-color: $primary;
+      color: white;
+      padding: 0.6rem 1.5rem;
+      height: 44px;
+      &:first-child {
+        border-radius: 0 50px 50px 0;
+        border-left: 3px solid $accent;
+        padding-left: 2rem;
+      }
+      &:last-child {
+        border-radius: 50px 0 0 50px;
+        padding-right: 2rem;
+      }
+      &:hover {
+        background-color: lighten($color: $primary, $amount: 10);
+      }
+    }
+    .icon {
+      position: absolute;
+      right: 76px;
+      top: 8px;
+      color: $accent;
+      z-index: 2;
+      font-size: 22px;
+    }
+  }
+  .category-list {
+    display: none;
+    margin-top: 30px;
+    .item {
+      a {
+        padding: 10px 20px 10px 0;
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        color: $textDark;
+        position: relative;
+        transition: all 0.2s ease;
+        .fi {
+          position: absolute;
+          left: 20px;
+          color: $secondary;
+        }
+        &:hover {
+          color: $primary;
+          padding-right: 30px;
+          background-color: rgba($color: $primary, $alpha: 0.1);
+        }
+      }
+    }
+  }
+  .socials-icon {
+    margin-top: 30px;
+    ul {
+      @include displayFlex(flex, center, center);
+      flex-wrap: wrap;
+      li {
+        margin: 5px;
+        a {
+          @include displayFlex(flex, center, center);
+          width: 40px;
+          height: 40px;
+          background-color: $primary;
+          font-size: 22px;
+          color: white;
+          border: 1px solid transparent;
+          border-radius: 50%;
+          &:hover {
+            border-color: $primary;
+            background-color: white;
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+}
+.overlay-back {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2001;
+  opacity: 0;
+  transition: all 0.3s;
+  &.active {
+    display: block;
+    opacity: 1;
+  }
+}
+@media (max-width: 992px) {
+  #sidebar-menu {
+    .category-list {
+      display: block;
+    }
+  }
+}
+@media (max-width: 768px) {
+  #sidebar-menu {
+    .sidebar-login {
+      display: flex;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  #sidebar-menu {
+    width: 100%;
+    right: -400px;
+  }
+}
+/*#endregion -------------- Sidebar Mobile Menu */

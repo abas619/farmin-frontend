@@ -1,0 +1,95 @@
+/*#region ----------------- Hero */
+.home-hero-section {
+  margin-top: 140px;
+  &.margin-more {
+    margin-top: 210px;
+  }
+}
+
+.swiper-indexHome {
+  .swiper-slide {
+    .item {
+      a {
+        display: block;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+      }
+      img {
+        width: 100%;
+        border-radius: 20px;
+      }
+      .text-content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    top: unset;
+    bottom: 10px;
+    width: 44px;
+    height: 44px;
+    &::after {
+      font-size: 30px;
+      font-family: $iconFontRegular;
+      font-weight: 900;
+      color: $primary;
+    }
+  }
+  .swiper-button-next {
+    left: unset;
+    right: 70px;
+    &::after {
+      content: "\f177";
+    }
+  }
+  .swiper-button-prev {
+    &::after {
+      content: "\f178";
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .home-hero-section {
+    margin-top: 100px;
+  }
+  .swiper-indexHome {
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 34px;
+      height: 34px;
+      &::after {
+        font-size: 24px;
+      }
+    }
+    .swiper-button-next {
+      right: 50px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .swiper-indexHome {
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 24px;
+      height: 24px;
+      &::after {
+        font-size: 20px;
+      }
+    }
+    .swiper-button-next {
+      right: 40px;
+    }
+  }
+}
+@media (max-width: 575px) {
+  .home-hero-section {
+  }
+}
+/*#endregion -------------- Hero */

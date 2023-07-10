@@ -1,0 +1,54 @@
+@mixin textTruncate($clamp) {
+    display: -webkit-box;
+    -webkit-line-clamp: $clamp;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@mixin gradient($deg, $firt, $second) {
+    background: linear-gradient($deg, $firt 0%, $second 100%);
+}
+
+@mixin displayFlex($display, $align, $justify) {
+    display: $display;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin customScrollbar($scroll, $bg-scroll) {
+    scrollbar-color: $scroll $bg-scroll;
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+        border-radius: 10px;
+        width: 5px;
+        height: 8px;
+        background-color: $bg-scroll;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: $scroll;
+    }
+}
+
+@mixin imgContainer($height, $borderRadius) {
+    width: 100%;
+    height: $height;
+    overflow: hidden;
+    border-radius: $borderRadius;
+    position: relative;
+    margin: 0;
+    .img-inner {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: $borderRadius;
+        transition: all 0.3s ease-in;
+    }
+}

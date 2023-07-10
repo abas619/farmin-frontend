@@ -1,0 +1,241 @@
+/*#region ----------------- Talent */
+.talent-search-section {
+  padding: 150px 0;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 600px;
+    height: 347px;
+    background-image: url(../images/bg/back_06.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    z-index: -1;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 250px;
+    transform: translateY(-50%);
+    width: 118px;
+    height: 220px;
+    background-image: url(../images/shapes/shape-big-arrow-left-purple.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    z-index: -1;
+    opacity: 0.4;
+  }
+  .section-inner {
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+  }
+  .box-talent {
+    background-color: rgba($color: $primary, $alpha: 0.9);
+    padding: 40px;
+    border-radius: 10px 0 0 10px;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: 0;
+      width: 80px;
+      height: 80px;
+      background-color: rgba($color: $primary, $alpha: 0.9);
+      border-radius: 0 10px 10px 0;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -60px;
+      width: calc(100% - 235px);
+      height: 60px;
+      background-color: rgba($color: $primary, $alpha: 0.9);
+      border-radius: 0 0 10px 10px;
+    }
+    h2 {
+      color: $accent;
+    }
+    p {
+      color: white;
+      text-align: justify;
+      margin-bottom: 5px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .btn-secondary {
+      position: absolute;
+      left: -40px;
+      bottom: -60px;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 0.7rem 2rem;
+    }
+    .icon {
+      position: absolute;
+      top: 0;
+      right: -170px;
+      width: 80px;
+      height: 80px;
+      background-color: $accent;
+      border-radius: 50%;
+      padding: 6px;
+      @include displayFlex(flex, center, center);
+      img {
+        width: 100%;
+      }
+    }
+    .arrow-back {
+      position: absolute;
+      bottom: -95px;
+      right: -95px;
+      width: 80px;
+      height: 80px;
+      background-color: rgba($color: $primary, $alpha: 0.9);
+      border-radius: 10px;
+      @include displayFlex(flex, center, center);
+      color: white;
+      font-size: 40px;
+    }
+  }
+}
+@media (max-width: 992px) {
+  .talent-search-section {
+    padding: 120px 0;
+    &::before {
+      width: 500px;
+      height: 290px;
+    }
+    &::after {
+      right: 150px;
+      width: 100px;
+      height: 187px;
+    }
+    .section-inner {
+      width: 80%;
+    }
+    .box-talent {
+      padding: 30px;
+      right: 40px;
+      &::before {
+        width: calc(100% - 215px);
+      }
+      &::after {
+        width: 60px;
+        height: 60px;
+        right: -60px;
+      }
+      h2 {
+        font-size: 1.7rem;
+      }
+      .icon {
+        width: 60px;
+        height: 60px;
+        right: -130px;
+      }
+      .arrow-back {
+        width: 60px;
+        height: 60px;
+        font-size: 32px;
+        bottom: -75px;
+        right: -75px;
+      }
+      .btn-secondary {
+        font-size: 16px;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .talent-search-section {
+    padding: 100px 0;
+    &::before {
+      width: 400px;
+      height: 232px;
+      top: -30px;
+    }
+    &::after {
+      right: 70px;
+      width: 80px;
+      height: 150px;
+    }
+    .section-inner {
+      width: 100%;
+    }
+    .box-talent {
+      padding: 20px;
+      right: 0;
+      &::before {
+        bottom: -50px;
+        width: calc(100% - 185px);
+        height: 50px;
+      }
+      &::after {
+        width: 50px;
+        height: 50px;
+        right: 0;
+        top: -50px;
+        border-radius: 10px 10px 0 0;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      p {
+        font-size: 13px;
+      }
+      .icon {
+        width: 40px;
+        height: 40px;
+        right: 55px;
+        top: -45px;
+      }
+      .arrow-back {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        bottom: -60px;
+        right: -10px;
+        background-color: $accent;
+      }
+      .btn-secondary {
+        font-size: 14px;
+        padding: 0.5rem 1.5rem;
+        left: -30px;
+        bottom: -50px;
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .talent-search-section {
+    &::before {
+      width: 300px;
+      height: 174px;
+    }
+    .box-talent {
+      border-radius: 8px 0 8px 8px;
+      padding-bottom: 40px;
+      &::before {
+        display: none;
+      }
+      .btn-secondary {
+        left: 20px;
+        bottom: -15px;
+      }
+      .arrow-back {
+        width: 40px;
+        height: 40px;
+        bottom: -20px;
+        right: 10px;
+      }
+    }
+  }
+}
+/*#endregion -------------- Talent */

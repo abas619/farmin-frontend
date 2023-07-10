@@ -1,0 +1,70 @@
+.countdown-timer {
+  &.in-header {
+    position: absolute;
+    left: 70px;
+    top: 0;
+  }
+  p {
+    font-size: 10px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 2px;
+    text-align: center;
+  }
+  .timer-inner {
+    @include displayFlex(flex, center, center);
+    padding-bottom: 10px;
+  }
+  .box-time {
+    height: 40px;
+    min-width: 50px;
+    border-left: 1px solid rgba($color: white, $alpha: 0.3);
+    @include displayFlex(flex, center, center);
+    flex-direction: column;
+    &:last-child {
+      border-left: none;
+    }
+    h6 {
+      margin-bottom: 0;
+      font-size: 26px;
+      font-weight: 600;
+      color: $accent;
+      line-height: 20px;
+    }
+    span {
+      display: block;
+      font-size: 10px;
+      color: white;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .countdown-timer {
+    &.in-header {
+      left: 10px;
+      top: 5px;
+    }
+    p {
+      line-height: 15px;
+      font-size: 8px;
+    }
+    .box-time {
+      min-width: 42px;
+      h6 {
+        font-size: 20px;
+      }
+      span {
+        font-size: 8px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .countdown-timer {
+    &.in-header {
+      top: 0;
+    }
+  }
+}
